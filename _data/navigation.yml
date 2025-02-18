@@ -1,0 +1,12 @@
+- name: Home 
+  link: / 
+- name: News
+  link: /news.html
+- name: Software
+  link: /software.html
+- name:  Publications
+  link: /publications.html
+- name: Conferences
+  link: /conferences.html
+- name: About
+  link: /about.html
