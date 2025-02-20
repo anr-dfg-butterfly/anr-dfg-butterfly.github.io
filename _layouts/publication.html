@@ -1,0 +1,58 @@
+---
+layout: default 
+--- 
+<h3>{{ page.title }}</h3>
+
+<p>
+ {{ page.journal  }}, {{ page.year }}, <a href="{{ page.doi }}">{{ page.doi }}</a>
+</p>
+
+<p>
+{% assign authorCount = page.authors | size %}
+{% if authorCount == 0 %}
+    No author
+{% elsif authorCount == 1 %}
+    {{ page.authors | first }}
+{% else %}
+    {% for author in page.authors %}
+      {% if forloop.first %}  
+        {% for person in site.authors %}
+          {% if person.short_name == author %}
+            <a href="{{ person.url }}">{{ person.name }}</a>
+          {% endif %} 
+        {% endfor %}
+      {% elsif forloop.last %}
+        {% for person in site.authors %}
+          {% if person.short_name == author %}
+            and <a href="{{ person.url }}">{{ person.name }}</a>
+          {% endif %} 
+        {% endfor %} 
+      {% else %}
+        {% for person in site.authors %}
+          {% if person.short_name == author %}
+          , <a href="{{ person.url }}">{{ person.name }}</a>
+          {% endif %} 
+        {% endfor %} 
+      {% endif %} 
+  {% endfor %}
+{% endif %}
+</p>
+
+  <!--
+  {% assign author = site.authors | where: 'short_name', page.author | first %}
+  {% if author %}
+    - <a href="{{ author.url }}">{{ author.name }}</a>
+  {% endif %}
+
+
+    {% for author in page.authors %}
+      {% for person in site.authors %}
+        {% if person.short_name == author %} 
+          {{ person.short_name }} 
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+
+  -->
+ 
+{{ content }} 

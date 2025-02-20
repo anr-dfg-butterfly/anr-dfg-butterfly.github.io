@@ -1,0 +1,37 @@
+---
+layout: default
+title: Team
+---
+
+<h1>Researchers involved in the project</h1>
+
+
+ <table class="speaker-table">
+    <thead>
+    <td>
+    Name 
+    </td>
+    <td> 
+    Country
+    </td>
+    <td> 
+    Institution
+    </td>
+    <td>
+    Position
+    </td>
+    </thead>
+
+    <tbody> 
+  {% for author in site.authors %}
+        <tr class="speaker-row">
+            <td> <a href="{{ author.url }}">{{ author.name }}</a> </td>
+            <td>  {{ author.country }}  </td>
+            <td>  {{ author.institution }}  </td>
+            <td>  {{ author.position }}  </td>
+        </tr>
+  {% endfor %}
+    </tbody>
+</table>
+
+

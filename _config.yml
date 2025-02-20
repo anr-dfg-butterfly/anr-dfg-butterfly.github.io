@@ -5,10 +5,30 @@ plugins:
 
 github: [metadata]
 
+collections:
+  authors:
+    output: true
+
 defaults:
   - scope:
       path: "assets/images"
     values:
       image: true
+      layout: "default"
+  - scope:
+      path: ""
+      type: "authors"
+    values:
+      layout: "author"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "publications"
+    values:
+      layout: "publication"
 
 #theme: clean-jekyll-theme 

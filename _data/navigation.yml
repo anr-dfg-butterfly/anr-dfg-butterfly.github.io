@@ -2,6 +2,8 @@
   link: / 
 - name: News
   link: /news.html
+- name: Team
+  link: /team.html
 - name: Software
   link: /software.html
 - name:  Publications
