@@ -2,13 +2,41 @@
 layout: default
 ---
 <h1>{{ page.name }}</h1>
-<h2>{{ page.position }}</h2>
+<h2>{{ page.position }}, {{page.institution}} </h2>
 
 {{ content }}
 
-<h2>Posts</h2>
+
+<h2>Publications:</h2>
 <ul>
-  {% assign filtered_posts = site.posts | where: 'author', page.short_name %}
+{% for pub in site.categories.publications %}
+  {% for person in pub.authors %}   
+    {% if person == page.short_name %}
+      <li><a href="{{ pub.url }}">{{ pub.title }}, {{ pub.journal_abbr }}, {{ pub.year }} </a></li>
+    {% endif %} 
+  {% endfor %}
+{% endfor %}
+</ul>
+
+<h2>Conferences:</h2>
+<ul>
+{% for conf in site.categories.conferences %}
+  {% for person in conf.participants %}   
+    {% if person == page.short_name %}
+      {% if  conf.web_page != null and conf.web_page != "" %} 
+            <li> <a href="{{conf.web_page}}">{{ conf.title }}, {{ conf.location }} {{ conf.dates }}</a> </li>         
+      {% else %} 
+           <li>  <a href="{{conf.url}}">{{ conf.title }}, {{ conf.location }} {{ conf.dates }}</a> </li>        
+      {% endif %} 
+    {% endif %} 
+  {% endfor %}
+{% endfor %}
+</ul>
+
+
+<h2>Posts:</h2>
+<ul>
+  {% assign filtered_posts = site.categories.news | where: 'author', page.short_name %}
   {% for post in filtered_posts %}
     <li><a href="{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}

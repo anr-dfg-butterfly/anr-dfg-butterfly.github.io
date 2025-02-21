@@ -30,5 +30,10 @@ defaults:
       type: "publications"
     values:
       layout: "publication"
+  - scope:
+      path: ""
+      type: "conferences"
+    values:
+      layout: "conference"
 
 #theme: clean-jekyll-theme 

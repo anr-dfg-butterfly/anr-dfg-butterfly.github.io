@@ -2,14 +2,54 @@
 layout: default
 title: Conferences
 ---
+<h2>
+A list of conferences related to the project:
+</h2>
+ <table class="conf-table">
+    <thead>
+    <td> 
+    Date 
+    </td>
+    <td> 
+    Location
+    </td>
+    <td> 
+    Title
+    </td>
+    <td> 
+    Participants
+    </td>
+    </thead>
 
-<!DOCTYPE html> 
-<html>
- <head>
-  <meta charset="utf-8">
-  <title>{{ page.title  }}</title>
- </head>
- <body>
- </body>
-</html>
+ <tbody> 
+  {% for conf in site.categories.conferences %}
+      <tr class="speaker-row">
+      <td>  {{ conf.dates }} </td>
+      <td>  {{ conf.location }} </td>
+      <td> {% if  conf.web_page != null and conf.web_page != "" %}
+             <a href="{{conf.web_page}}">{{ conf.title }}</a>         
+           {% else %} 
+             <a href="{{ conf.url }}">{{ conf.title }}</a>  
+           {% endif %} 
+      <td> 
+      {% for participant in conf.participants %}     
+        {% if forloop.last %}  
+          {% for person in site.authors %}
+            {% if person.short_name == participant  %}  
+              <a href="{{ person.url }}">{{ person.name }}</a>
+            {% endif %} 
+          {% endfor %}
+        {% else %} 
+          {% for person in site.authors %}
+            {% if person.short_name == participant  %}  
+              <a href="{{ person.url }}">{{ person.name }},</a>
+            {% endif %} 
+          {% endfor %}
+        {% endif %} 
+      {% endfor %}
+       </td>
+    </tr>
+  {% endfor %}
+ </tbody>
+
 

@@ -219,36 +219,73 @@ nav a {
 
 
 .journal-table {
-    border-collapse: collapse;
-    margin: 25px 0;
-    //font-size: 0.9em;
-    font-size: 1.2em;
-    font-family: sans-serif;
-    min-width: 1175px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-collapse: collapse;
+  margin: 25px 0;
+  //font-size: 0.9em;
+  font-size: 1.2em;
+  font-family: sans-serif;
+  min-width: 1175px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .journal-table thead tr {
-    background-color: #0097A9;
-    color: #ffffff;
-    text-align: left;
-    font-weight: bold;
+  background-color: #0097A9;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
 }
 
 .journal-table th,
 .journal-table td {
-    padding: 10px 20px;
-    min-width:100px,
+  padding: 10px 20px;
+  min-width:100px,
 }
 
 .journal-table tbody tr {
-    border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
 }
 
 .journal-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+  background-color: #f3f3f3;
 }
 
 .journal-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
+  border-bottom: 2px solid #009879;
 }
+
+.conf-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  //font-size: 0.9em;
+  font-size: 1.2em;
+  font-family: sans-serif;
+  min-width: 1175px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.conf-table thead tr {
+  background-color: #0097A9;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.conf-table th,
+.conf-table td {
+  padding: 10px 20px;
+  min-width:100px,
+}
+
+.conf-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.conf-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.conf-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+
